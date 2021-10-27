@@ -16,6 +16,10 @@
     --font-josefin: 'Josefin Sans', sans-serif;
 }
 
+.open{
+    overflow: hidden;
+}
+
 .container{
     width: 80%;
     margin: auto;
@@ -32,24 +36,53 @@
     display: flex;
     justify-content:space-between;
     padding: 35px 30px;
+    
 }
 
 .home__svg{
     display: flex;
+    position: relative;
     align-items: center;
+    z-index: 1;
 }
 
 .home__logo{
     width: 150px;
 }
 
-.home__links{
-    display: none;
+.home__hamburger{
+    cursor: pointer;
 }
 
-.home__item{
-    margin: 0 10px;
+
+.home__links{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    top: 0;
+    left: -100%;
+    color: white;
+    display: unset;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .3s ease all;
+    font-family: var(--font-josefin);
 }
+
+
+.home__item{
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+    text-transform: uppercase;
+}
+
+.menu-open{
+    left: 0;
+}
+
 
 
 .home__hero{
@@ -57,6 +90,7 @@
     margin: 9rem auto;
     border: 2px solid var(--white-color);
     padding: 1rem;
+    overflow: hidden;
 }
 
 .home__tittle{
@@ -198,7 +232,7 @@
 .footer{
     margin-top: 5rem;
     background: var(--black-color);
-    height: 70vh;
+    padding-bottom: 2rem;
 }
 
 .footer__logo{
@@ -266,6 +300,9 @@
     border-radius: 30px;
     bottom: -5px;
 }
+.footer__item:hover::after{
+    width: 10%;
+}
 
 
 @media screen and (min-width: 950px){
@@ -293,14 +330,23 @@
     }
 
     .home__links{
+        position: unset;
+        width: unset;
+        height: unset;
+        background:unset;
+        top: unset;
+        left: unset;
         list-style: none;
         display: flex;
+        flex-direction: unset;
         right: 0;
         color: var(--white-color);
         font-family: var(--font-alata);
     }
 
     .home__item{
+        text-transform: unset;
+        margin: 0 10px;
         padding: 0 7px;
         cursor: pointer;
         font-size: 18px;
