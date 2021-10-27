@@ -541,6 +541,10 @@
     text-align: end;
 }
 
+.footer__item:hover::after{
+    width: 70%;
+}
+
 }
 
 
